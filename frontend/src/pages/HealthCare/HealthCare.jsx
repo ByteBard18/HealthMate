@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../Layout/Layout";
-import HealthCare from "../../Components/ui/HealthCare/HealthCare";
+import HealthCarePage from "../../Components/ui/HealthCarePage/HealthCarePage";
 
 const HealthCare = () => {
   return (
-    <Layout showFooter={true}>
-      <HealthCare></HealthCare>
+    <Layout showFooter={true} showNavbar={false}>
+      <HealthCarePage></HealthCarePage>
     </Layout>
   );
 };

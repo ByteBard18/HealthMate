@@ -88,7 +88,7 @@ const Navbar = () => {
               <FaUserMd className="icon" />Dashboard
             </Button>
           </Link>
-          <Link to="/healthtips">
+          <Link to="/healthcare">
             <Button variant="ghost" className="button button-ghost">
               <FaHeartbeat className="icon" />HealthTips
             </Button>

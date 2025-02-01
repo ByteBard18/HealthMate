@@ -3,7 +3,8 @@ import Dashboard from "../src/pages/Dashboard/Dashboard";
 import Appointment from "../src/pages/Appointment/Appointment";
 import DoctorBooking from "../src/pages/Booking/Booking";
 import Home from "../src/pages/Home/Home";
-import Profile from "./pages/Profile/Profile";
+import Profile from "../src/pages/Profile/Profile";
+
 
 
 function App() {

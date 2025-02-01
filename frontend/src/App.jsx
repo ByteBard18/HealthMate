@@ -3,15 +3,12 @@ import Dashboard from "../src/pages/Dashboard/Dashboard";
 import Appointment from "../src/pages/Appointment/Appointment";
 import DoctorBooking from "../src/pages/Booking/Booking";
 import Home from "../src/pages/Home/Home";
-import { Button } from './components/ui/button'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 import ProtectedRoute from './components/ProtectedRoute';
 import SignInPage from './components/ui/SignIn/SignIn';
 import SignUpPage from './components/ui/SignUpPage/SignUpPage';
 import Profile from "../src/pages/Profile/Profile";
 import ProfileForm from "../src/pages/ProfileForm/ProfileForm"
 import AI from './pages/HealthAI/AI';
-import HealthCare from './pages/HealthCare/HealthCare';
 
 
 

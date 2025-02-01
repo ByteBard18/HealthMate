@@ -6,7 +6,7 @@ import { Separator } from "@/components/ui/separator";
 
 const Profile = () => {
   return (
-    <div className="max-w-3xl mx-auto p-6 space-y-6">
+    <div className="max-w-3xl mx-auto p-6 space-y-6 mt-20">
       {/* Profile Header */}
       <Card>
         <CardHeader className="flex items-center space-x-4">

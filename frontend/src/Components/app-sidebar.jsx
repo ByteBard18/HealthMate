@@ -10,7 +10,7 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
-
+// HI, i am here, catch  me if you can and if you find me contact me
 // Menu items.
 const items = [
   {

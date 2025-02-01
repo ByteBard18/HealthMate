@@ -13,6 +13,7 @@ const Hero = () => {
             in one place.
           </p>
         </div>
+        <br></br>
         <i className="fas fa-chevron-down scroll-indicator"></i>
       </div>
     </section>

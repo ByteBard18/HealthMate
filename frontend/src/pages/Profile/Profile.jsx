@@ -4,7 +4,7 @@ import ProfilePage from "../../Components/ui/ProfilePage/ProfilePage";
 
 const Profile = () => {
   return (
-    <Layout showFooter={true}>
+    <Layout showFooter={true} showNavbar={false}>
       <ProfilePage/>
     </Layout>
   );

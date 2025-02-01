@@ -88,13 +88,14 @@ const Navbar = () => {
               <FaUserMd className="icon" />Dashboard
             </Button>
           </Link>
+          <Link to="/healthcare">
            <Link to="/appointment">
             <Button variant="ghost" className="button button-ghost">
             <FaHeartbeat className="icon" />Appointment</Button>
           </Link>
 
           <Button variant="default" className="button button-default">
-            <SignedOut>
+             <SignedOut>
               <SignInButton className="sign-in-button">
                 <div className="sign-in-content">
                   <FaSignInAlt className="icon" />

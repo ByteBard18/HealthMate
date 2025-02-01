@@ -18,6 +18,7 @@ function App() {
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/book-appointment/:doctorId" element={<DoctorBooking />} />
           <Route path="/profileform" element={<ProfileForm/>} />
+
       </Routes>
     </Router>  
     </div>

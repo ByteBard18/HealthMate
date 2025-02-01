@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Dashboard from "../src/pages/Dashboard/Dashboard";
 import Appointment from "../src/pages/Appointment/Appointment"
 import Home from "../src/pages/Home/Home";
-import Profile from "./Components/ui/ProfilePage/ProfilePage";
+import Profile from "../src/pages/Profile/Profile";
 
 
 
@@ -14,7 +14,8 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/profile" element={<Profile />} />
          <Route path="/dashboard" element={<Dashboard />} />
-         <Route path='/appointment' element={<Appointment/>} />
+          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/book-appointment/:doctorId" element={<DoctorBooking />} />
       </Routes>
     </Router>  
     </div>

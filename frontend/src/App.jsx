@@ -1,15 +1,19 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "../src/pages/Home/Home";
-import { Button } from './components/ui/button'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+import Dashboard from "../src/pages/Dashboard/Dashboard";
 // import "./styles/globals.css";
 
 function App() {
   return (
-    <div className="App">
-      <Home />      
-    </div>
+    <Router>
+      <div className="App">
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
+
 export default App;
-
-

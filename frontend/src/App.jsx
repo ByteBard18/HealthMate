@@ -1,12 +1,18 @@
 import Home from "../src/pages/Home/Home";
-import { Button } from './components/ui/button'
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
-// import "./styles/globals.css";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Profile from "./Components/ui/ProfilePage/ProfilePage";
+
+
 
 function App() {
   return (
     <div className="App">
-      <Home />      
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+      </Routes>
+    </Router>  
     </div>
   );
 }

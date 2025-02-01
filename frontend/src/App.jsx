@@ -12,15 +12,15 @@ import SignInPage from './components/ui/SignIn/SignIn';
 import SignUpPage from './components/ui/SignUpPage/SignUpPage';
 import Profile from "../src/pages/Profile/Profile";
 import ProfileForm from "../src/pages/ProfileForm/ProfileForm"
+import AI from './pages/HealthAI/AI';
 import HealthCare from './pages/HealthCare/HealthCare';
+
 
 
 
 function App() {
   return (
     <div className="App">
-      <Home />      
-
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignInPage />} />
@@ -31,10 +31,9 @@ function App() {
         <Route path="/appointment" element={<ProtectedRoute element={<Appointment />} />} />
         <Route path="/book-appointment/:doctorId" element={<ProtectedRoute element={<DoctorBooking />} />} />
         <Route path="/profileform" element={<ProtectedRoute element={<ProfileForm />} />} />
+        <Route path="/ai" element={<AI />} />
       </Routes>
-
       <Router>
-      
     </Router>  
     </div>
   );

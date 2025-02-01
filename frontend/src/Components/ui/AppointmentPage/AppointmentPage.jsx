@@ -3,6 +3,8 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import Dr1 from "../../../assets/images/Dr1.jpg";
+import Dr2 from "../../../assets/images/Dr2.jpg";
 
 const AppointmentPage = () => {
   const navigate = useNavigate();
@@ -26,11 +28,13 @@ const AppointmentPage = () => {
       experience: "15 years",
       rating: 4.8,
       availability: "Available Today",
-      image: "https://via.placeholder.com/200",
+      image: "https://hips.hearstapps.com/hmg-prod/images/portrait-of-a-happy-young-doctor-in-his-clinic-royalty-free-image-1661432441.jpg?crop=0.66698xw:1xh;center,top&resize=1200:*",
       about: "Dr. James has a strong commitment to delivering comprehensive medical care, focusing on preventive medicine, early diagnosis, and effective treatment strategies.",
       fee: 50,
       qualifications: "MBBS",
     },
+
+    
     {
       id: "dr-emily-larson",
       name: "Dr. Emily Larson",
@@ -38,7 +42,7 @@ const AppointmentPage = () => {
       experience: "12 years",
       rating: 4.9,
       availability: "Next Available: Tomorrow",
-      image: "https://via.placeholder.com/200",
+      image: "https://plus.unsplash.com/premium_photo-1673953510158-174d4060db8b?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       about: "Dr. Larson specializes in women's health with a focus on preventive care and comprehensive treatment.",
       fee: 60,
       qualifications: "MBBS, MD",

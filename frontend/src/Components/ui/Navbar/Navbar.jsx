@@ -95,7 +95,7 @@ const Navbar = () => {
           </Link>
 
           <Button variant="default" className="button button-default">
-            <SignedOut>
+             <SignedOut>
               <SignInButton className="sign-in-button">
                 <div className="sign-in-content">
                   <FaSignInAlt className="icon" />

@@ -32,7 +32,8 @@ const registerDoctor = AsyncHandler(async (req, res) => {
 
 // ✅ Get Doctor Profile (Fixed findOne())
 const doctorProfilePage = AsyncHandler(async (req, res) => {
-    const doctorId = req.user?.doctorId;
+    // const doctorId = req.user?.doctorId;
+    const { doctorId } = req.params
 
     if (!doctorId) {
         throw new ApiError(401, {}, "Doctor ID not found");
@@ -48,8 +49,8 @@ const doctorProfilePage = AsyncHandler(async (req, res) => {
 
 // ✅ Get Doctor Dashboard (Optimized Aggregation)
 const doctorDashboard = AsyncHandler(async (req, res) => {
-    const doctorId = req.user?.doctorId;
-
+    // const doctorId = req.user?.doctorId;
+    const {doctorId} = req.params
     if (!doctorId) {
         throw new ApiError(401, {}, "Doctor ID not found");
     }
@@ -92,14 +93,14 @@ const doctorDashboard = AsyncHandler(async (req, res) => {
 
 // ✅ Search Doctor by ID (Fixed validation)
 const searchDoctorsById = AsyncHandler(async (req, res) => {
-    const patientId = req.user?.patientId;
+    // const patientId = req.user?.patientId;
     const { doctorId } = req.params;
 
-    if (!patientId) {
-        throw new ApiError(401, {}, "Patient ID not found");
-    }
+    // if (!patientId) {
+    //     throw new ApiError(401, {}, "Patient ID not found");
+    // }
 
-    const doctor = await Doctor.findById(doctorId);
+    const doctor = await Doctor.find({doctorId});
     if (!doctor) {
         throw new ApiError(404, {}, "Doctor not found");
     }

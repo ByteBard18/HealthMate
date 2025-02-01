@@ -2,12 +2,9 @@ import express from "express";
 import { 
     registerPatient, 
     patientProfilePage, 
-    searchDoctors, 
-    bookAppointment, 
-    cancelAppointment, 
-    viewMedicalRecords 
+    patientDashboard, 
 } from "../controllers/patient.controllers.js";
-import { authMiddleware, isPatient } from "../middlewares/auth.middlewares.js";
+// import { authMiddleware, isPatient } from "../middlewares/auth.middlewares.js";
 
 const router = express.Router();
 
@@ -15,18 +12,18 @@ const router = express.Router();
 router.post("/register", registerPatient);
 
 // ✅ Get Patient Profile (Protected - Patient Only)
-router.get("/profile", authMiddleware, isPatient, patientProfilePage);
+router.get("/profile", patientProfilePage);
 
 // ✅ Search for Doctors (Protected - Patient Only)
-router.get("/search", authMiddleware, searchDoctors);
+router.get("/search", patientDashboard);
 
 // ✅ Book Appointment (Protected - Patient Only)
-router.post("/:patientId/book/:doctorId", authMiddleware, isPatient, bookAppointment);
+// router.post("/:patientId/book/:doctorId", bookAppointment);
 
-// ✅ Cancel Appointment (Protected - Patient Only)
-router.put("/:patientId/cancel/:doctorId", authMiddleware, isPatient, cancelAppointment);
+// // ✅ Cancel Appointment (Protected - Patient Only)
+// router.put("/:patientId/cancel/:doctorId", cancelAppointment);
 
-// ✅ View Medical Records (Protected - Patient Only)
-router.get("/records", authMiddleware, isPatient, viewMedicalRecords);
+// // ✅ View Medical Records (Protected - Patient Only)
+// router.get("/records", viewMedicalRecords);
 
 export {router as patientRouter};

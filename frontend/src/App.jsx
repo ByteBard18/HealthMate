@@ -5,8 +5,6 @@ import DoctorBooking from "../src/pages/Booking/Booking";
 import Home from "../src/pages/Home/Home";
 import { Button } from './components/ui/button'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
-import Profile from "../src/pages/Profile/Profile";
-import ProfileForm from "../src/pages/ProfileForm/ProfileForm";
 import ProtectedRoute from './components/ProtectedRoute';
 import SignInPage from './components/ui/SignIn/SignIn';
 import SignUpPage from './components/ui/SignUpPage/SignUpPage';
@@ -33,8 +31,8 @@ function App() {
         <Route path="/profileform" element={<ProtectedRoute element={<ProfileForm />} />} />
         <Route path="/ai" element={<AI />} />
       </Routes>
-      <Router>
-    </Router>  
+      {/* <Router>
+    </Router>   */}
     </div>
   );
 }

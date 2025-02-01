@@ -78,9 +78,9 @@ const Navbar = () => {
               <FaHome className="icon" />Home
             </Button>
           </Link>
-          <Link to="/features">
+          <Link to="/appointment">
             <Button variant="ghost" className="button button-ghost">
-              <FaHeartbeat className="icon" />Features
+              <FaHeartbeat className="icon" />Appointment
             </Button>
           </Link>
           <Link to="/dashboard">

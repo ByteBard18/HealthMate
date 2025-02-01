@@ -74,16 +74,23 @@ const Navbar = () => {
         <h1 className="navbar-logo">HealthMate</h1>
         <div className="button-container">
           <Link to="/">
-            <Button variant="ghost" className="button button-ghost">Home</Button>
+            <Button variant="ghost" className="button button-ghost">
+            <FaHome className="icon" />Home</Button>
+            
           </Link>
           <Link to="/features">
-            <Button variant="ghost" className="button button-ghost">Features</Button>
+            <Button variant="ghost" className="button button-ghost">
+            <FaHeartbeat className="icon" />Features</Button>
+            
           </Link>
           <Link to="/dashboard">
-            <Button variant="ghost" className="button button-ghost">Dashboard</Button>
+            <Button variant="ghost" className="button button-ghost">
+            <FaUserMd className="icon" />Dashboard</Button>
+            
           </Link>
            <Link to="/healthtips">
-            <Button variant="ghost" className="button button-ghost">HealthTips</Button>
+            <Button variant="ghost" className="button button-ghost">
+            <FaHeartbeat className="icon" />HealthTips</Button>
           </Link>
     
           <Button variant="default" className="button button-default">

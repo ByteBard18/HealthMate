@@ -8,17 +8,16 @@ import Profile from "./Components/ui/ProfilePage/ProfilePage";
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/profile" element={<Profile />} />
+    <div className="App">
+      <Router>
+      <Routes>
+      <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/book-appointment/:doctorId" element={<DoctorBooking />} />
-        </Routes>
-    </Router>
-</div>
+      </Routes>
+    </Router>  
+    </div>
   );
 }
 

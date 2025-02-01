@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate, useLocation } from 'react-router-dom';
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { 
   Home,
@@ -6,7 +7,6 @@ import {
   Pill,
   Syringe,
   Stethoscope,
-  Heart,
   Building2,
   Calendar,
   Activity,
@@ -16,16 +16,23 @@ import {
 
 const DashboardPage = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const navItems = [
-    { icon: <Home className="w-5 h-5" />, label: "Dashboard", active: true },
-    { icon: <User className="w-5 h-5" />, label: "Profile" },
-    { icon: <Pill className="w-5 h-5" />, label: "Medications" },
-    { icon: <Syringe className="w-5 h-5" />, label: "Vaccinations" },
-    { icon: <Stethoscope className="w-5 h-5" />, label: "Check-ups" },
-    { icon: <Building2 className="w-5 h-5" />, label: "Hospitals" },
-    { icon: <Calendar className="w-5 h-5" />, label: "Appointments" },
+    { icon: <Home className="w-5 h-5" />, label: "Dashboard", path: "/dashboard" },
+    { icon: <User className="w-5 h-5" />, label: "Profile", path: "/profile" },
+    { icon: <Pill className="w-5 h-5" />, label: "Medications", path: "/medications" },
+    { icon: <Syringe className="w-5 h-5" />, label: "Vaccinations", path: "/vaccinations" },
+    { icon: <Stethoscope className="w-5 h-5" />, label: "Check-ups", path: "/checkups" },
+    { icon: <Building2 className="w-5 h-5" />, label: "Hospitals", path: "/hospitals" },
+    { icon: <Calendar className="w-5 h-5" />, label: "Appointments", path: "/appointment" },
   ];
+
+  const handleNavigation = (path) => {
+    navigate(path);
+    setIsMobileMenuOpen(false);
+  };
 
   return (
     <div className="flex flex-col md:flex-row min-h-screen bg-gray-50">
@@ -47,14 +54,17 @@ const DashboardPage = () => {
         <h2 className="text-xl font-semibold mb-6">HealthMate</h2>
         
         <nav className="space-y-2">
-          {navItems.map((item, index) => (
+          {navItems.map((item) => (
             <div
-              key={index}
+              key={item.path}
               className={`
                 flex items-center gap-2 px-4 py-2 rounded-lg cursor-pointer
-                ${item.active ? 'bg-green-100 text-green-700' : 'text-gray-700 hover:bg-gray-100'}
+                transition-colors duration-200
+                ${location.pathname === item.path 
+                  ? 'bg-blue-100 text-blue-700' 
+                  : 'text-gray-700 hover:bg-blue-50 hover:text-blue-600'}
               `}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => handleNavigation(item.path)}
             >
               {item.icon}
               <span>{item.label}</span>
@@ -68,7 +78,6 @@ const DashboardPage = () => {
         <h1 className="text-2xl font-semibold mb-6">Welcome back, John!</h1>
         
         <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6">
-          {/* Today's Medications */}
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-lg font-medium flex items-center gap-2">
@@ -90,7 +99,6 @@ const DashboardPage = () => {
             </CardContent>
           </Card>
 
-          {/* Upcoming Appointments */}
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-lg font-medium flex items-center gap-2">
@@ -106,7 +114,6 @@ const DashboardPage = () => {
             </CardContent>
           </Card>
 
-          {/* Health Metrics */}
           <Card>
             <CardHeader className="pb-2">
               <CardTitle className="text-lg font-medium flex items-center gap-2">

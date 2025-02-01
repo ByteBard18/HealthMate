@@ -26,6 +26,10 @@ const medicalRecordSchema = new Schema({
         lowercase: true,
         trim: true
     },
+    parameters: [{
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Parameter",
+    }],
     prescription: [{
         type: mongoose.Schema.Types.ObjectId,
         ref: "Medication"

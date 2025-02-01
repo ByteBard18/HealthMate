@@ -1,11 +1,21 @@
-import { Button } from "@/Components/ui/Button/Button";
+import React from "react";
+import "./Hero.css"; // Import the corresponding CSS file
 
 const Hero = () => {
   return (
-    <section className="text-center p-10 bg-gray-900 text-white">
-      <h2 className="text-3xl font-bold">Welcome to Our Website</h2>
-      <p className="text-lg mt-2">Your journey starts here.</p>
-      <Button className="mt-4">Get Started</Button>
+    <section className="hero">
+      <div className="hero-content">
+        <div className="hero-text">
+          <h1>Your Complete Healthcare Solution</h1>
+          <p>
+            Experience healthcare like never before. Connect with doctors, find
+            hospitals, manage appointments, and access your medical records - all
+            in one place.
+          </p>
+        </div>
+        <br></br>
+        <i className="fas fa-chevron-down scroll-indicator"></i>
+      </div>
     </section>
   );
 };

@@ -1,22 +1,26 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Dashboard from "../src/pages/Dashboard/Dashboard";
+import Appointment from "../src/pages/Appointment/Appointment";
+import DoctorBooking from "../src/pages/Booking/Booking";
 import Home from "../src/pages/Home/Home";
-<<<<<<< Updated upstream
 import { Button } from './components/ui/button'
 import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
-// import "./styles/globals.css";
-=======
 import Profile from "../src/pages/Profile/Profile";
 import ProfileForm from "../src/pages/ProfileForm/ProfileForm";
 import ProtectedRoute from './components/ProtectedRoute';
 import SignInPage from './components/ui/SignIn/SignIn';
 import SignUpPage from './components/ui/SignUpPage/SignUpPage';
->>>>>>> Stashed changes
+import Profile from "../src/pages/Profile/Profile";
+import ProfileForm from "../src/pages/ProfileForm/ProfileForm"
+import HealthCare from './pages/HealthCare/HealthCare';
+
+
 
 function App() {
   return (
     <div className="App">
-<<<<<<< Updated upstream
       <Home />      
-=======
+
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/sign-in" element={<SignInPage />} />
@@ -28,14 +32,13 @@ function App() {
         <Route path="/book-appointment/:doctorId" element={<ProtectedRoute element={<DoctorBooking />} />} />
         <Route path="/profileform" element={<ProtectedRoute element={<ProfileForm />} />} />
       </Routes>
->>>>>>> Stashed changes
+
+      <Router>
+      
+    </Router>  
     </div>
   );
 }
+
 export default App;
 
-
-<<<<<<< Updated upstream
-=======
-export default App;
->>>>>>> Stashed changes

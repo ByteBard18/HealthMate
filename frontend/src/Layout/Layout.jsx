@@ -13,3 +13,7 @@ const Layout = ({ children, showFooter = true, showNavbar = true }) => {
 };
 
 export default Layout;
+
+
+
+ 

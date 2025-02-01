@@ -17,11 +17,21 @@ const Navbar = () => {
           </Button>
           <Button variant="default" className="button button-default">
              <SignedOut>
+<<<<<<< Updated upstream
                 <SignInButton />
               </SignedOut>
                 <SignedIn>
                   <UserButton />
                 </SignedIn>
+=======
+              <SignInButton className="sign-in-button">
+                Sign In
+              </SignInButton>
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
+>>>>>>> Stashed changes
           </Button>
         </div>
       </div>

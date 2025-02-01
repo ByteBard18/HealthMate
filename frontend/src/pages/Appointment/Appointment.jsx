@@ -1,11 +1,11 @@
 import React from "react";
 import Layout from "../../Layout/Layout";
-import DashboardPage from "../../Components/ui/DashboardPage/DashboardPage";
+import AppointmentPage from "../../Components/ui/AppointmentPage/AppointmentPage";
 
 const Dashboard = () => {
   return (
     <Layout showFooter={false} showNavbar={false}>
-      <DashboardPage></DashboardPage>
+      <AppointmentPage></AppointmentPage>
     </Layout>
   );
 };

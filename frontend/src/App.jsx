@@ -1,9 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "../src/pages/Home/Home";
 import Dashboard from "../src/pages/Dashboard/Dashboard";
 import Appointment from "../src/pages/Appointment/Appointment";
 import DoctorBooking from "../src/pages/Booking/Booking";
-// import "./styles/globals.css";
+import Home from "../src/pages/Home/Home";
+import Profile from "./Components/ui/ProfilePage/ProfilePage";
+
 
 function App() {
   return (
@@ -11,12 +12,13 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
           <Route path="/dashboard" element={<Dashboard />} />
           <Route path="/appointment" element={<Appointment />} />
           <Route path="/book-appointment/:doctorId" element={<DoctorBooking />} />
         </Routes>
-      </div>
     </Router>
+</div>
   );
 }
 

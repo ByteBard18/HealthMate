@@ -1,0 +1,64 @@
+/* Navbar */
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 1rem 2rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(10px);
+  }
+  
+  .nav-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .navbar h1 {
+    font-size: 1.25rem;
+    font-weight: bold;
+    color: var(--primary);
+  }
+  
+  .navbar .button-container {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .navbar .button-container .button {
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .navbar .button-container .button:hover {
+    opacity: 0.8;
+  }
+  
+  .navbar .button-container .button-ghost {
+    background-color: transparent;
+    border: 2px solid var(--primary);
+    color: var(--primary);
+  }
+  
+  .navbar .button-container .button-default {
+    background-color: var(--primary);
+    color: var(--white);
+  }
+  
+  .navbar .button-container .button-default:hover {
+    background-color: var(--secondary);
+  }
+  
+  :root {
+    --primary: #2c3e50;  /* Adjust this to your brand's primary color */
+    --secondary: #e74c3c;  /* Adjust this to your secondary color */
+    --white: #ffffff;
+  }
+  

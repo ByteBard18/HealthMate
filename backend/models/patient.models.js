@@ -1,7 +1,11 @@
 import mongoose, { Schema } from "mongoose";
-import mongooseAggregatePaginate, { } from "mongoose-aggregate-paginate-v2"
+import mongooseAggregatePaginate from "mongoose-aggregate-paginate-v2";
 
 const patientSchema = new Schema({
+    patientId: {
+        type: String,
+        required: true
+    },
     fullname: {
         type: String,
         required: true,
@@ -35,7 +39,7 @@ const patientSchema = new Schema({
         required: true,
     },
     address: {
-        type: [],
+        type: Array,
         required: true
     },
     city: {
@@ -69,27 +73,29 @@ const patientSchema = new Schema({
         trim: true
     },
     allergies: {
-        type: [],
+        type: Array,
         default: []
     },
     surgeries: {
-        type: [],
+        type: Array,
         default: []
     },
     medicalConditions: {
-        type: [],
+        type: Array,
         default: []
     },
     doctors: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Doctor"
+        ref: "Doctor",
+        default: []
     }],
     hospitals: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "Hospital"
+        ref: "Hospital",
+        default: []
     }]
-}, { timestamps: true })
+}, { timestamps: true });
 
-patientSchema.plugin(mongooseAggregatePaginate)
+patientSchema.plugin(mongooseAggregatePaginate);
 
-export const Patient = mongoose.model("Patient", patientSchema)
+export const Patient = mongoose.model("Patient", patientSchema);

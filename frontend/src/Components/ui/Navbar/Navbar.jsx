@@ -89,9 +89,9 @@ const Navbar = () => {
             </Button>
           </Link>
           <Link to="/healthcare">
+           <Link to="/appointment">
             <Button variant="ghost" className="button button-ghost">
-              <FaHeartbeat className="icon" />HealthTips
-            </Button>
+            <FaHeartbeat className="icon" />Appointment</Button>
           </Link>
 
           <Button variant="default" className="button button-default">

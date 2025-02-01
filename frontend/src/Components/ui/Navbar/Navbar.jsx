@@ -37,13 +37,12 @@
 
 
 
-
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/Components/ui/button/Button";
 import { FaHome, FaHeartbeat, FaUserMd, FaSignInAlt } from 'react-icons/fa'; // Health-related icons
 import { SignedIn, SignedOut, SignInButton, UserButton, useUser } from "@clerk/clerk-react";
-import axios from "axios";  // Import Axios
+import axios from "axios";  
 
 import "./Navbar.css";
 
@@ -53,12 +52,12 @@ const Navbar = () => {
     if (user) {
       // Log the user data to the console
       console.log("User Data:", user);
+      console.log("User Data",user.fullName)
 
       // Send user data to the backend using Axios
       axios.post("http://localhost:5000/api/userData", {
         email: user.email,
-        fullName: user.fullName,
-        
+        fullName: user.fullName,       
       })
       .then(response => {
         console.log("Data sent to the backend successfully", response.data);
@@ -68,6 +67,7 @@ const Navbar = () => {
       });
     }
   }, [user]); 
+  
   return (
     <nav className="navbar">
       <div className="nav-container">
@@ -75,29 +75,32 @@ const Navbar = () => {
         <div className="button-container">
           <Link to="/">
             <Button variant="ghost" className="button button-ghost">
-            <FaHome className="icon" />Home</Button>
-            
+              <FaHome className="icon" />Home
+            </Button>
           </Link>
           <Link to="/features">
             <Button variant="ghost" className="button button-ghost">
-            <FaHeartbeat className="icon" />Features</Button>
-            
+              <FaHeartbeat className="icon" />Features
+            </Button>
           </Link>
           <Link to="/dashboard">
             <Button variant="ghost" className="button button-ghost">
-            <FaUserMd className="icon" />Dashboard</Button>
-            
+              <FaUserMd className="icon" />Dashboard
+            </Button>
           </Link>
-           <Link to="/healthtips">
+          <Link to="/healthtips">
             <Button variant="ghost" className="button button-ghost">
-            <FaHeartbeat className="icon" />HealthTips</Button>
+              <FaHeartbeat className="icon" />HealthTips
+            </Button>
           </Link>
-    
+
           <Button variant="default" className="button button-default">
-             <SignedOut>
+            <SignedOut>
               <SignInButton className="sign-in-button">
-                <FaSignInAlt className="icon" />
-                Sign In
+                <div className="sign-in-content">
+                  <FaSignInAlt className="icon" />
+                  Sign In
+                </div>
               </SignInButton>
             </SignedOut>
             <SignedIn>

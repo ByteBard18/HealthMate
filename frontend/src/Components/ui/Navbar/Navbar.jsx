@@ -1,5 +1,6 @@
 import React from "react";
 import { Button } from "@/Components/ui/button/Button";
+import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -15,7 +16,12 @@ const Navbar = () => {
             Features
           </Button>
           <Button variant="default" className="button button-default">
-            Sign Up
+             <SignedOut>
+                <SignInButton />
+              </SignedOut>
+                <SignedIn>
+                  <UserButton />
+                </SignedIn>
           </Button>
         </div>
       </div>

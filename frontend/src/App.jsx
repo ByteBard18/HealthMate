@@ -1,20 +1,23 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from "../src/pages/Home/Home";
 import Dashboard from "../src/pages/Dashboard/Dashboard";
 import Appointment from "../src/pages/Appointment/Appointment"
-// import "./styles/globals.css";
+import Home from "../src/pages/Home/Home";
+import Profile from "./Components/ui/ProfilePage/ProfilePage";
+
+
 
 function App() {
   return (
-    <Router>
-      <div className="App">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/dashboard" element={<Dashboard />} />
-          <Route path='/appointment' element={<Appointment/>} />
-        </Routes>
-      </div>
-    </Router>
+    <div className="App">
+      <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/profile" element={<Profile />} />
+         <Route path="/dashboard" element={<Dashboard />} />
+         <Route path='/appointment' element={<Appointment/>} />
+      </Routes>
+    </Router>  
+    </div>
   );
 }
 

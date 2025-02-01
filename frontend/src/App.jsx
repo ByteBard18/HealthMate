@@ -6,22 +6,7 @@ import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-reac
 function App() {
   return (
     <div className="App">
-      <Home />
-      <>
-       <header>
-        <SignedOut>
-          <SignInButton />
-        </SignedOut>
-        <SignedIn>
-          <UserButton />
-        </SignedIn>
-      </header>
-        <div className='flex min-h-screen flex-col items-center justify-center'>
-          <h1>Hello HealthMate!</h1>
-          <Button>Heyy there!</Button>
-        </div>
-      </>
-      
+      <Home />      
     </div>
   );
 }

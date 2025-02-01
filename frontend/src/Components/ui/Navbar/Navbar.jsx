@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import { Button } from "@/Components/ui/button/Button";
-import { SignedIn, SignedOut, SignInButton, UserButton } from '@clerk/clerk-react'
+import { SignedIn, SignedOut, SignInButton, UserButton } from "@clerk/clerk-react";
 import "./Navbar.css";
 
 const Navbar = () => {
@@ -9,19 +10,22 @@ const Navbar = () => {
       <div className="nav-container">
         <h1>HealthMate</h1>
         <div className="button-container">
-          <Button variant="ghost" className="button button-ghost">
-            Home
-          </Button>
-          <Button variant="ghost" className="button button-ghost">
-            Features
-          </Button>
+          <Link to="/">
+            <Button variant="ghost" className="button button-ghost">Home</Button>
+          </Link>
+          <Link to="/features">
+            <Button variant="ghost" className="button button-ghost">Features</Button>
+          </Link>
+          <Link to="/dashboard">
+            <Button variant="ghost" className="button button-ghost">Dashboard</Button>
+          </Link>
           <Button variant="default" className="button button-default">
-             <SignedOut>
-                <SignInButton />
-              </SignedOut>
-                <SignedIn>
-                  <UserButton />
-                </SignedIn>
+            <SignedOut>
+              <SignInButton />
+            </SignedOut>
+            <SignedIn>
+              <UserButton />
+            </SignedIn>
           </Button>
         </div>
       </div>

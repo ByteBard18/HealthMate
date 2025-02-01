@@ -1,7 +1,8 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from "../src/pages/Home/Home";
 import Dashboard from "../src/pages/Dashboard/Dashboard";
-import Appointment from "../src/pages/Appointment/Appointment"
+import Appointment from "../src/pages/Appointment/Appointment";
+import DoctorBooking from "../src/pages/Booking/Booking";
 // import "./styles/globals.css";
 
 function App() {
@@ -11,7 +12,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/dashboard" element={<Dashboard />} />
-          <Route path='/appointment' element={<Appointment/>} />
+          <Route path="/appointment" element={<Appointment />} />
+          <Route path="/book-appointment/:doctorId" element={<DoctorBooking />} />
         </Routes>
       </div>
     </Router>

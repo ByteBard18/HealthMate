@@ -90,12 +90,7 @@ const Navbar = () => {
           </Link>
           <Link to="/healthcare">
             <Button variant="ghost" className="button button-ghost">
-              <FaHeartbeat className="icon" />Healthcare
-            </Button>
-          </Link>
-          <Link to="/appointment">
-            <Button variant="ghost" className="button button-ghost">
-              <FaHeartbeat className="icon" />Appointment
+              <FaHeartbeat className="icon" />Health Tips
             </Button>
           </Link>
 

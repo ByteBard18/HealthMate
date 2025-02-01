@@ -5,7 +5,7 @@ import DashboardPage from "../../Components/ui/DashboardPage/DashboardPage";
 
 const Dashboard = () => {
   return (
-    <Layout showFooter={false} showNavbar={true}>
+    <Layout showFooter={false} showNavbar={false}>
       <DashboardPage></DashboardPage>
     </Layout>
   );

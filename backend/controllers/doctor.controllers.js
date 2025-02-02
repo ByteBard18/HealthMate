@@ -13,7 +13,9 @@ const registerDoctor = AsyncHandler(async (req, res) => {
         throw new ApiError(409, {}, "Doctor already exists");
     }
 
-    const slots = generateDailyTimeSlots(new Date().toISOString().split("T")[0]);
+    const slots = await generateDailyTimeSlots(new Date().toISOString().split("T")[0]);
+
+    console.log(slots);
 
     const newDoctor = await Doctor.create({
         doctorId,
@@ -30,6 +32,26 @@ const registerDoctor = AsyncHandler(async (req, res) => {
     return res.status(201).json(new ApiResponse(201, newDoctor, "Doctor registered successfully!"));
 });
 
+// ✅ Update Doctor Details
+const updateDoctorDetails = AsyncHandler(async (req, res) => {
+    const { doctorId } = req.params;
+
+    if (!doctorId) {
+        throw new ApiError(401, {}, "Doctor ID is required");
+    }
+
+    // ✅ Check if doctor exists
+    const doctor = await Doctor.findById( doctorId );
+    if (!doctor) {
+        throw new ApiError(404, {}, "Doctor not found");
+    }
+
+    // ✅ Update doctor fields dynamically
+    const updatedDoctor = await Doctor.findByIdAndUpdate( doctorId, req.body, { new: true } );
+
+    return res.status(200).json(new ApiResponse(200, updatedDoctor, "Doctor details updated successfully!"));
+});
+
 // ✅ Get Doctor Profile (Fixed findOne())
 const doctorProfilePage = AsyncHandler(async (req, res) => {
     // const doctorId = req.user?.doctorId;
@@ -39,7 +61,7 @@ const doctorProfilePage = AsyncHandler(async (req, res) => {
         throw new ApiError(401, {}, "Doctor ID not found");
     }
 
-    const doctor = await Doctor.findOne({ doctorId });
+    const doctor = await Doctor.findById( doctorId );
     if (!doctor) {
         throw new ApiError(404, {}, "Doctor not found");
     }
@@ -110,12 +132,12 @@ const searchDoctorsById = AsyncHandler(async (req, res) => {
 
 // ✅ Search Doctor by Speciality (Returns empty array if no doctors found)
 const searchDoctorsBySpeciality = AsyncHandler(async (req, res) => {
-    const patientId = req.user?.patientId;
+    // const patientId = req.user?.patientId;
     const { speciality } = req.params;
 
-    if (!patientId) {
-        throw new ApiError(401, {}, "Patient ID not found");
-    }
+    // if (!patientId) {
+    //     throw new ApiError(401, {}, "Patient ID not found");
+    // }
 
     const doctors = await Doctor.find({ specialist: speciality });
 
@@ -180,6 +202,7 @@ const cancelAppointment = AsyncHandler(async (req, res) => {
 
 export {
     registerDoctor,
+    updateDoctorDetails,
     doctorProfilePage,
     doctorDashboard,
     searchDoctorsById,

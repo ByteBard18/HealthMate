@@ -3,6 +3,7 @@ import {
     registerPatient, 
     patientProfilePage, 
     patientDashboard, 
+    updatePatientDetails
 } from "../controllers/patient.controllers.js";
 // import { authMiddleware, isPatient } from "../middlewares/auth.middlewares.js";
 
@@ -11,11 +12,13 @@ const router = express.Router();
 // ✅ Register Patient (Public)
 router.post("/register", registerPatient);
 
-// ✅ Get Patient Profile (Protected - Patient Only)
-router.get("/profile", patientProfilePage);
+router.put("/update/:patientId", updatePatientDetails);
 
-// ✅ Search for Doctors (Protected - Patient Only)
-router.get("/search", patientDashboard);
+// ✅ Get Patient Profile (Protected - Patient Only)
+router.get("/profile/:patientId", patientProfilePage);
+
+// ✅ Get Paitent Dashboard (Protected - Patient Only)
+router.get("/dashboard/:patientId", patientDashboard);
 
 // ✅ Book Appointment (Protected - Patient Only)
 // router.post("/:patientId/book/:doctorId", bookAppointment);

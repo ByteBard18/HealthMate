@@ -11,8 +11,6 @@ import ProfileForm from "../src/pages/ProfileForm/ProfileForm"
 import AI from './pages/HealthAI/AI';
 
 
-
-
 function App() {
   return (
     <div className="App">

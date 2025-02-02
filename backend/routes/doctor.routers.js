@@ -6,7 +6,8 @@ import {
     searchDoctorsById,
     searchDoctorsBySpeciality,
     bookAppointment,
-    cancelAppointment
+    cancelAppointment,
+    updateDoctorDetails
 } from "../controllers/doctor.controllers.js";
 // import { authMiddleware, isDoctor } from "../middlewares/auth.middlewares.js";
 
@@ -14,6 +15,8 @@ const router = express.Router();
 
 // ✅ Register Doctor (Public)
 router.post("/register", registerDoctor);
+
+router.put("/update/:doctorId", updateDoctorDetails)
 
 // ✅ Get Doctor Profile (Protected - Doctor Only)
 router.get("/profile/:doctorId", doctorProfilePage);
@@ -28,9 +31,9 @@ router.get("/search/id/:doctorId", searchDoctorsById);
 router.get("/search/speciality/:speciality", searchDoctorsBySpeciality);
 
 // ✅ Book Appointment (Protected - Patient Only)
-router.post("/:patientId/book/:doctorId", bookAppointment);
+router.post("/:patientId/book/:doctorId", bookAppointment);  //untested route
 
 // ✅ Cancel Appointment (Protected - Patient Only)
-router.put("/:patientId/cancel/:doctorId", cancelAppointment);
+router.put("/:patientId/cancel/:doctorId", cancelAppointment); //untested route
 
 export { router as doctorRouter };
